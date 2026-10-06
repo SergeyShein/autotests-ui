@@ -78,7 +78,7 @@ class CreateCoursePage(BasePage):
         if is_image_uploaded:
             expect(self.preview_image_remove_button).to_be_visible()
 
-    def click_remove_image_bullon(self):
+    def click_remove_image_button(self):
         self.preview_image_remove_button.click()
 
     def check_visible_preview_image(self):
@@ -92,8 +92,8 @@ class CreateCoursePage(BasePage):
             title: str,
             estimated_time: str,
             description: str,
-            max_scope: str,
-            min_scope: str
+            max_score: str,
+            min_score: str
     ):
         expect(self.create_course_title_input).to_be_visible()
         expect(self.create_course_title_input).to_have_value(title)
@@ -105,10 +105,10 @@ class CreateCoursePage(BasePage):
         expect(self.create_course_description_textarea).to_have_value(description)
 
         expect(self.create_course_max_score_input).to_be_visible()
-        expect(self.create_course_max_score_input).to_have_value(max_scope)
+        expect(self.create_course_max_score_input).to_have_value(max_score)
 
         expect(self.create_course_min_score_input).to_be_visible()
-        expect(self.create_course_min_score_input).to_have_value(min_scope)
+        expect(self.create_course_min_score_input).to_have_value(min_score)
 
     def fill_create_course_form(
             self,
